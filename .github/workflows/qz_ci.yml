@@ -11,7 +11,7 @@ on:
     branches: [ "main" ]
   schedule:
   # 定时任务，在每天的5点推送天气信息到邮箱
-    - cron: '* * * * *'
+    - cron: '*/5 * * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,4 +39,4 @@ jobs:
       - name: Run a dingding message
         run: |
           echo  "hello"
-          curl -X POST 'https://oapi.dingtalk.com/robot/send?access_token=a4d671062097416631a5ecee16cff119a0559a8b733340a9d3ede39daa46a0eb' -H 'Content-Type: application/json' -d "{\"msgtype\": \"text\",\"text\": {\"content\":\"action: 2023-05-24 23:05\"}}"
+          curl -X POST 'https://oapi.dingtalk.com/robot/send?access_token=a4d671062097416631a5ecee16cff119a0559a8b733340a9d3ede39daa46a0eb' -H 'Content-Type: application/json' -d "{\"msgtype\": \"text\",\"text\": {\"content\":\"action:\n `date`\n `cat /etc/*release* | sed -n 1p`\n `curl -s cip.cc | sed -n 1p` \"}}"
