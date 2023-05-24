@@ -39,4 +39,4 @@ jobs:
       - name: Run a dingding message
         run: |
           echo  "hello"
-          curl -X POST 'https://oapi.dingtalk.com/robot/send?access_token=a4d671062097416631a5ecee16cff119a0559a8b733340a9d3ede39daa46a0eb' -H 'Content-Type: application/json' -d "{\"msgtype\": \"text\",\"text\": {\"content\":\"action:\n `date`\n `cat /etc/*release* | sed -n 1p`\n `curl -s cip.cc | sed -n 1p` \"}}"
+          curl -X POST 'https://oapi.dingtalk.com/robot/send?access_token=a4d671062097416631a5ecee16cff119a0559a8b733340a9d3ede39daa46a0eb' -H 'Content-Type: application/json' -d "{\"msgtype\": \"text\",\"text\": {\"content\":\"action:\n `date`\n `cat /etc/*release* | sed -n 1p`\n `lscpu | sed -n 4p`\n `free -h | sed -n 2p`\n `df -h | egrep ^/ | sed -n 1p`\n `curl -s cip.cc | sed -n 1p` \"}}"
