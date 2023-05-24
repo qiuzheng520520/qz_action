@@ -11,7 +11,7 @@ on:
     branches: [ "main" ]
   schedule:
   # 定时任务，在每天的5点推送天气信息到邮箱
-    - cron: '0 23 * * *'
+    - cron: '* * * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,12 +28,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      # 执行多次脚本
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: |
+          echo "date: `date:`"
+          echo "cat /etc/*release* | sed -n 1p"
+          echo "curl cip.cc"
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Run a dingding message
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo  "hello"
