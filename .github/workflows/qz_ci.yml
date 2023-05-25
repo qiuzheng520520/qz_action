@@ -10,8 +10,8 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-  # 定时任务，每30分钟执行一次，github限制最快为5分钟
-    - cron: '*/2 * * * *'
+  # 定时任务，每个小时整点执行一次，github限制最快为5分钟
+    - cron: '0 * * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
