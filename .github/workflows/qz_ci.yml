@@ -34,11 +34,9 @@ jobs:
           # echo "date: `date:`"
           # echo "cat /etc/*release* | sed -n 1p"
           # echo "curl cip.cc"
-		  
-		  
+
       # 执行多次脚本
       - name: Run a one-line script
         run: |
           echo "hello"
 		  /bin/bash vm_status.sh
-
