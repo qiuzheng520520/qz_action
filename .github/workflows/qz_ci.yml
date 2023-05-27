@@ -39,4 +39,4 @@ jobs:
       - name: Run a one-line script
         run: |
           echo "hello"
-		  /bin/bash vm_status.sh
+          /bin/bash vm_status.sh
